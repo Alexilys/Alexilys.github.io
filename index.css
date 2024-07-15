@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    max-width: 800px;
+    max-width: 900px;
   }
   
   /* Create two equal columns that floats next to each other */
@@ -23,13 +23,10 @@
   /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
   @media screen and (max-width: 600px) {
     .column {
-      width: 350px;
+      width: 400px;
     }
   }
-  h1 {
-    font-size: 1rem;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
+
   label {
     font-weight: bolder;
     display: inline-block;
@@ -40,7 +37,7 @@
     text-align: end;
   }
   p {
-    font-weight: lighter;
+    font-weight: normal;
   }  
   * {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
