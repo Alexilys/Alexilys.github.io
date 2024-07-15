@@ -1,6 +1,5 @@
 var w = 500;
 var h = 800;
-var placeholder = 0.0;
 
 var multipliers = {
 	DEF:17,
@@ -79,7 +78,7 @@ document.getElementById("CalcBtn").onclick = function(){
 	var_INVvalue2 = document.getElementById("INVvalue2").value;
 
 	var resultChip2 = 
-	var_DEFvalue1*multipliers.DEF +
+	var_DEFvalue2*multipliers.DEF +
 	var_Shldvalue2*multipliers.shld+
 	var_DmgIncvalue2*multipliers.dmginc+
 	var_DmgDecvalue2*multipliers.dmgdec+
