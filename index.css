@@ -7,7 +7,7 @@
   .column {
     float: left;
     width: 50%;
-    padding: 10px;
+    padding: 30px;
     padding-top: 0px;
     padding-bottom: 30px;
     /* height: 300px;  Should be removed. Only for demonstration */
@@ -23,11 +23,11 @@
   /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
   @media screen and (max-width: 600px) {
     .column {
-      width: 600px;
+      width: 350px;
     }
   }
   h1 {
-    font-size: 5vh;
+    font-size: 1rem;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   label {
