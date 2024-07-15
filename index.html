@@ -5,13 +5,11 @@
 	<link rel="stylesheet" href="index.css">
 	<title>TopWar HT-chip Calculator</title>
 </head>
-<script src="https://d3js.org/d3.v7.min.js"></script>
-<script src = "index.js"></script>
 <body>
 	<h1>HT-Chip Calculator</h1>
 	<div class="row">
 		<div class="column" style="background-color:#f3ffe8;">
-			<h1>New Chip</h1>
+			<h1 style="color: #1f3f00;">New Chip</h1>
 			<h2 id="resultChip1">Chip value: 0.0</h2>
 			<label>DEF</label>= <input id="DEFvalue1" placeholder='0.00'size = 10>%<br>
 			<label>Starting shield</label>= <input id="Shldvalue1"placeholder='0.00'size = 10>%<br>
@@ -28,7 +26,7 @@
 
 		</div>
 		<div class="column" style="background-color:#eafaff;">
-			<h1>Current Chip</h1>
+			<h1 style="color: #00384a;">Current Chip</h1>
 			<h2 id="resultChip2">Chip value: 0.0</h2>
 			<label>DEF</label>= <input id="DEFvalue2" placeholder='0.00'size = 10>%<br>
 			<label>Starting shield</label>= <input id="Shldvalue2"placeholder='0.00'size = 10>%<br>
@@ -45,6 +43,24 @@
 
 		</div>
 	  </div> <br><br>
-<button>Calculate</button>
+<button id="CalcBtn" style="font-weight:bolder; font-size: 1.4em;">Calculate</button><br>
+<button onClick="window.location.reload();" id="ResetBtn"style="font-weight:bolder; font-size: 1.4em;">Reset </button>
+
+<p>
+	<span class="highlight">HOW TO USE:</span><br>
+	Please write the percentage in the format '00.00'. <br>
+	If you have two stats of the same type (fx All Units HP and Army HP), add them together. Leave out stats not relevant to your troop type! <br>
+	<span class="highlight">The values will reset if you reload the page!</span> <br>
+
+	<span class="highlight">ATTACK SPEED</span><br>
+	ATK SPD is one of the most valuable stats to have on a chip - but only if your ATK SPD is higher than your opponents. If you have a chip with ATK SPD, I'd recommend asking an experienced player for advice. This calculator does not account for ATK SPD! <br>
+
+	<span class="highlight">PLEASE NOTE!</span><br>
+	These calculations are only estimates! If you're in doubt, it's always better to ask an experienced player, since they often have insights that this calculator can't give you. Have fun!
+
+	<br>- Mischief <br>
+</p>
 </body>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src = "index.js"></script>
 </html>
