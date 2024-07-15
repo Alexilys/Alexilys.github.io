@@ -39,7 +39,7 @@
   
   * {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    -webkit-text-size-adjust: none;
+    /* -webkit-text-size-adjust: none; */
   }
   button {
     margin:0 auto;
