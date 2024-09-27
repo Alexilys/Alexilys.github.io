@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box;
+  
+  }
+
+/* The navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #234128;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  left: 0; 
+  width: 100%; /* Full width */
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  font-size: larger;
+  padding: 16px 16px;
+  text-decoration: none;
+}
+
+/* Change background on mouse-over */
+.navbar a:hover {
+  background: #f1f1f1;
+  color: black;
+  font-weight: bold;
+}
+
+  
+  /* Create two equal columns that floats next to each other */
+  .column {
+    float: left;
+    width: 50%;
+    padding: 30px;
+    padding-top: 0px;
+    padding-bottom: 30px;
+
+    /* height: 300px;  Should be removed. Only for demonstration */
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 350px;
+    }
+  }
+
+    /* Create two equal columns that floats next to each other */
+    .inputfield {
+      float: left;
+      width: 75%;
+      padding: 30px;
+      padding-top: 0px;
+      padding-bottom: 0px;
+      margin-bottom: 30px;
+    }
+
+  label {
+    font-weight: bolder;
+    display: inline-block;
+    width: 120px;
+    text-align: left;
+  }
+
+  labelGems {
+    font-weight: bolder;
+    display: inline-block;
+    width: 60px;
+    text-align: left;
+  }
+
+  labelOther {
+    font-weight: bolder;
+    display: inline-block;
+    width: 60px;
+    text-align: left;
+  }
+
+  /* Adjust the width of input fields with type="number" */
+input[type="number"] {
+  width: 6; /* Adjust this value as needed */
+  text-align: end;
+}
+
+  /* Make result spans italic */
+span.result {
+  font-style: italic;
+  color: grey;
+}
+
+
+  ::placeholder {
+    text-align: end;
+  }
+  
+  * {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -webkit-text-size-adjust: none;
+  }
+  button {
+    margin: 0 auto;
+    display: block;
+    height: 50px;
+    width: 200px;
+    font-size: larger;
+  }
+    p .highlight {
+    font-weight: bold;
+  }

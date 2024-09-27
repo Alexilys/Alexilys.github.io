@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" href="data:,">
+	<link rel="stylesheet" href="HT-chips-calc.css">
+	<title>TopWar HT-chip Calculator</title>
+</head>
+<body>
+	<div class="navbar">
+		<a href="HT-chips-calc.html">HT-chips</a>
+		<a href="Gems.html">Gems</a>
+	</div>
+	>
+	<div class="main">
+	<img src="HT-fotor-bg-remover-202407158322.png" style="float: right; width: 150px;">
+	<h1 style="font-size:xx-large; padding-top: 20px;">Mischief's HT-Chip Calculator</h1>
+	<p style="font-weight: 500;">This is a tool for comparing HT-chips based on values found on official TW channels. <br>
+		Do you have questions or feedback for me? <br>
+		Find me on Discord; tbm2 or in the game; Mischief (S3455) </p>
+	</div>
+
+	<div class="row">
+		<div class="column" style="background-color:#f3ffe8;">
+			<h1 style="color: #1f3f00; font-size:xx-large;">New Chip</h1>
+			<h2 id="resultChip1">Chip value: 0</h2>
+			<label>DEF</label>= <input id="DEFvalue1" placeholder='0.00'size = 6>%<br>
+			<label>Starting shield</label>= <input id="Shldvalue1"placeholder='0.00'size = 6>%<br>
+			<label>Damage Inc</label>= <input id="DmgIncvalue1"placeholder='0.00'size = 6>%<br>
+			<label>Damage Dec</label>= <input id="DmgDecvalue1"placeholder='0.00'size = 6>%<br>
+			<label>Attack</label>= <input id="Atkvalue1"placeholder='0.00'size = 6>%<br>
+			<label>HP</label>= <input id="HPvalue1"placeholder='0.00'size = 6>%<br>
+			<label>Crit. Rate</label>= <input id="CrtRtvalue1"placeholder='0.00'size = 6>%<br>
+			<label>Crit. DMG</label>= <input id="CrtDmgvalue1"placeholder='0.00'size = 6>%<br>
+			<label>Elm. Enhance</label>= <input id="Elmvalue1"placeholder='0.00'size = 6>%<br>
+			<label>Elm. RES</label>= <input id="ElmRESvalue1"placeholder='0.00'size = 6>%<br>
+			<label>INV</label>= <input id="INVvalue1"placeholder='0.00'size = 6>%<br>
+			<!-- <label>ATK SPD</label>= <input id="AtkSpdvalue1"placeholder='0.00'size = 6>%<br> -->
+			<p><span style="font-weight: bold; font-size:small;">The values will reset if you reload the page!</span></p>
+		</div>
+		<div class="column" style="background-color:#eafaff;">
+			<h1 style="color: #00384a;font-size:xx-large;">Current Chip</h1>
+			<h2 id="resultChip2">Chip value: 0</h2>
+			<label>DEF</label>= <input id="DEFvalue2" placeholder='0.00'size = 6>%<br>
+			<label>Starting shield</label>= <input id="Shldvalue2"placeholder='0.00'size = 6>%<br>
+			<label>Damage Inc</label>= <input id="DmgIncvalue2"placeholder='0.00'size = 6>%<br>
+			<label>Damage Dec</label>= <input id="DmgDecvalue2"placeholder='0.00'size = 6>%<br>
+			<label>Attack</label>= <input id="Atkvalue2"placeholder='0.00'size = 6>%<br>
+			<label>HP</label>= <input id="HPvalue2"placeholder='0.00'size = 6>%<br>
+			<label>Crit. Rate</label>= <input id="CrtRtvalue2"placeholder='0.00'size = 6>%<br>
+			<label>Crit. DMG</label>= <input id="CrtDmgvalue2"placeholder='0.00'size = 6>%<br>
+			<label>Elm. Enhance</label>= <input id="Elmvalue2"placeholder='0.00'size = 6>%<br>
+			<label>Elm. RES</label>= <input id="ElmRESvalue2"placeholder='0.00'size = 6>%<br>
+			<label>INV</label>= <input id="INVvalue2"placeholder='0.00'size = 6>%<br>
+			<!-- <label>ATK SPD</label>= <input id="AtkSpdvalue2"placeholder='0.00'size = 6>%<br> -->
+			<p><span style="font-weight: bold; font-size:small;">The values will reset if you reload the page!</span></p>
+		</div>
+	  </div> <br><br>
+<button id="CalcBtn" style="font-weight:bold; font-size: 1.4em;">Calculate</button><br>
+<button onClick="window.location.reload();" id="ResetBtn"style="font-weight:bold; font-size: 1.4em;">Reset </button>
+
+<p style="color:#000000; -webkit-text-size-adjust:none;">
+	<span style="font-weight: bold;">HOW TO USE:</span><br>
+	Please write the percentage in the format '00.00'. <br>
+	If you have two stats of the same type (fx All Units HP and Army HP), add them together. Leave out stats not relevant to your troop type! <br>
+
+	<span style="font-weight: bold;">ATTACK SPEED</span><br>
+	ATK SPD is one of the most valuable stats to have on a chip - but only if your ATK SPD is higher than your opponents. If you have a chip with ATK SPD, I'd recommend asking an experienced player for advice. This calculator does not account for ATK SPD! <br>
+
+	<span style="font-weight: bold;">PLEASE NOTE!</span><br>
+	These calculations are only estimates! If you're in doubt, it's always better to ask an experienced player, since they often have insights that this calculator can't give you. Have fun!
+
+	<br>- Mischief <br>
+</p>
+</body>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src = "HT-chips-calc.js"></script>
+</html>
