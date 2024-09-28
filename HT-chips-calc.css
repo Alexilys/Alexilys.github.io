@@ -6,7 +6,6 @@
 /* The navigation bar */
 .navbar {
   overflow: hidden;
-  background-color: #234128;
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   left: 0; 
@@ -61,12 +60,14 @@
     .inputfield {
       float: left;
       width: 75%;
+      max-width: 750px;
       padding: 30px;
       padding-top: 0px;
       padding-bottom: 0px;
       margin-bottom: 30px;
     }
 
+  
   label {
     font-weight: bolder;
     display: inline-block;
@@ -88,6 +89,13 @@
     text-align: left;
   }
 
+  labelVIT {
+    font-weight: bolder;
+    display: inline-block;
+    width: 160px;
+    text-align: left;
+  }
+
   /* Adjust the width of input fields with type="number" */
 input[type="number"] {
   width: 6; /* Adjust this value as needed */
@@ -100,6 +108,11 @@ span.result {
   color: grey;
 }
 
+.button-style {
+font-weight: bold;
+font-size: 1.4em;
+display: block;
+}
 
   ::placeholder {
     text-align: end;
@@ -116,6 +129,8 @@ span.result {
     width: 200px;
     font-size: larger;
   }
+
+
     p .highlight {
     font-weight: bold;
   }

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" href="data:,">
+	<link rel="stylesheet" href="HT-chips-calc.css">
+	<title>TopWar VIT Calculator</title>
+</head>
+<body>
+	<div class="navbar" style="background-color: rgb(0, 188, 13);">
+        <a href="index.html">Home</a>
+		<a href="HT-chips-calc.html">HT-chips</a>
+		<a href="Gems.html">Gems</a>
+		<a href="VIT.html">VIT</a>
+	</div>
+>
+	<div class="main">
+	<img src="VIT.png" style="float: right; height: 150px;">
+	<h1 style="font-size:xx-large; padding-top: 20px;">Mischief's VIT Calculator</h1>
+	<p style="font-weight: 500;">Let's find out how much VIT you've got!<br>
+		Do you have questions or feedback for me? <br>
+		Find me on Discord; tbm2 or in the game; Mischief (S3455) </p>
+	</div>
+
+    <div class="inputfield" style="background-color:#e2ffd4;">
+        <h1 style="color: #1f3f00; font-size:xx-large;">VIT</h1>
+        <h2 id="resultTotal">Total VIT: 0</h2>
+
+        <div id="form-container"></div>
+
+        <p><span style="font-weight: bold; font-size:small;">The values will reset if you reload the page!</span></p>
+
+        <!-- Clear fix to ensure buttons are always below inputs -->
+        <div style="clear: both;"></div>
+    </div>
+
+    <div class="button-container">
+        <button id="CalcBtnVIT" class="button-style">Calculate</button><br>
+        <button onClick="window.location.reload();" id="ResetBtn" class="button-style">Reset</button>
+    </div>
+
+</body>
+<script src="VIT.js"></script>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+</html>

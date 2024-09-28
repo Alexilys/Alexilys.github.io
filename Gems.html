@@ -6,14 +6,15 @@
 	<title>TopWar Gems Calculator</title>
 </head>
 <body>
-	<div class="navbar">
+	<div class="navbar" style="background-color: rgb(71, 14, 14);">
         <a href="index.html">Home</a>
 		<a href="HT-chips-calc.html">HT-chips</a>
 		<a href="Gems.html">Gems</a>
+		<a href="VIT.html">VIT</a>
 	</div>
     >
 	<div class="main">
-	<img src="HT-fotor-bg-remover-202407158322.png" style="float: right; width: 150px;">
+	<img src="Gems_big.png" style="float: right; width: 150px;">
 	<h1 style="font-size:xx-large; padding-top: 20px;">Mischief's Gem Calculator</h1>
 	<p style="font-weight: 500;">Yes, yes, I know you can just use a regular calculator, but it becomes confusing really fast, so this might be easier for some! Do you have questions or feedback for me?<br>
 		Find me on Discord; tbm2 or in the game; Mischief (S3455) </p>
@@ -26,14 +27,12 @@
 			<div id="form-container"></div>
 
 			<p><span style="font-weight: bold; font-size:small;">The values will reset if you reload the page!</span></p>
-		</div>
 		
-		<div>
-		<br>
-		<button id="CalcBtnGems" style="font-weight:bold; font-size: 1.4em;">Calculate</button><br>
-		<button onClick="window.location.reload();" id="ResetBtn"style="font-weight:bold; font-size: 1.4em;">Reset </button>		
 		</div>
-</body>
+		<div style="clear: both;"></div>
+		<button id="CalcBtnGems" class="button-style">Calculate</button><br>
+		<button onClick="window.location.reload();" id="ResetBtn" class="button-style">Reset </button>
+	</body>
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src = "Gems.js"></script>
 </html>
