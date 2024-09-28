@@ -35,6 +35,9 @@ function generateFormFromCSV(csvContent) {
             const resultSpan = document.createElement('span');
             resultSpan.id = 'result' + index;
             resultSpan.innerHTML = ' = 0'; // Initial result
+            resultSpan.style.fontStyle = 'italic';
+            resultSpan.style.color = 'grey';
+            
 
             // Append to form container
             formContainer.appendChild(label);
