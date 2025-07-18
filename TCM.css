@@ -1,0 +1,98 @@
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -webkit-text-size-adjust: none;
+    padding: 20px;
+    background-color: #f4f4f4;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .map-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .team-block {
+    border: 1px solid #ccc;
+    background: #fff;
+    padding: 10px;
+    width: 360px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  }
+  
+  .team-block h2 {
+    text-align: center;
+  }
+  
+  .input-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .input-grid input {
+    width: 100px;
+    padding: 4px;
+  }
+  
+  svg {
+    border: 1px solid #ccc;
+    background-color: white;
+    margin-top: 10px;
+  }
+  
+  button {
+    margin-top: 10px;
+    width: 100%;
+    padding: 6px;
+    font-weight: bold;
+  }
+  
+  .floaters {
+    margin-top: 40px;
+    padding: 20px;
+    border: 2px dashed #666;
+    background: #fff;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  }
+  
+  .floaters h2 {
+    text-align: center;
+  }
+
+  /* The navigation bar */
+.navbar {
+    overflow: hidden;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    left: 0; 
+    width: 100%; /* Full width */
+  }
+  
+  /* Links inside the navbar */
+  .navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    font-size: larger;
+    padding: 16px 16px;
+    text-decoration: none;
+  }
+
+  /* Change background on mouse-over */
+.navbar a:hover {
+    background: #f1f1f1;
+    color: black;
+    font-weight: bold;
+  }
+  

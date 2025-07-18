@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Titan Canyon Maps</title>
+  <link rel="stylesheet" href="TCM.css" />
+</head>
+<body>
+  <div class="navbar" style="background-color: rgb(3, 148, 184);">
+    <a href="index.html">Home</a>
+    <a href="HT-chips-calc.html">HT-chips</a>
+    <a href="Gems.html">Gems</a>
+    <a href="VIT.html">VIT</a>
+    <!-- <a href="TG.html">Titan Gear</a> -->
+    <a href="TCM.html">Titan Canyon Maps</a>
+  </div>
+  <div class="main">
+	<img src="team-yellow.png" style="float: right; width: 150px;">
+	<h1 style="font-size:xx-large; padding-top: 20px; text-align: start;">Mischief's Titan Map Generator</h1>
+	<p style="font-weight: 500;">This is just one style of map with one way to set up teams. If there's interest, I'll try to add more customization options in the future. Do you have questions or feedback for me?<br>
+		Find me on Discord; tbm2 or in the game; Mischief (S3355) </p>
+	</div>
+
+  <div style="text-align:center; margin-top: 10px;">
+    <button id="resetAllBtn" style="padding: 10px 50px; font-size: 16px; width: 200px;">Reset All</button>
+  </div><br>
+  
+  <div class="map-container" id="maps"></div>
+
+  <div class="floaters">
+    <h2>Floaters</h2>
+    <div class="input-grid" id="floaters-inputs"></div>
+  </div>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="TCM.js"></script>
+</body>
+</html>
