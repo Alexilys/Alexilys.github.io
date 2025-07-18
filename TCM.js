@@ -107,30 +107,28 @@ const teams = [
     const svg = document.getElementById(`svg-${teamName}`);
     const serializer = new XMLSerializer();
     const svgString = serializer.serializeToString(svg);
-    
-    // Create an Image of the background
+  
     const bgImage = new Image();
     bgImage.src = imgURL;
-    bgImage.onload = () => {
-      // Create a canvas
-      const canvas = document.createElement("canvas");
-      canvas.width = width;
-      canvas.height = height;
-      const ctx = canvas.getContext("2d");
   
-      // Draw the background image first
+    bgImage.onload = () => {
+      const scale = 2; // Increase to 3 for 1080x1080
+      const canvas = document.createElement("canvas");
+      canvas.width = width * scale;
+      canvas.height = height * scale;
+      const ctx = canvas.getContext("2d");
+      ctx.scale(scale, scale); // Scale up drawing context
+  
       ctx.drawImage(bgImage, 0, 0, width, height);
   
-      // Convert SVG overlay (names) to image
       const svgBlob = new Blob([svgString], { type: "image/svg+xml;charset=utf-8" });
       const url = URL.createObjectURL(svgBlob);
       const overlayImage = new Image();
   
       overlayImage.onload = () => {
-        ctx.drawImage(overlayImage, 0, 0, width, height); // Draw names on top
+        ctx.drawImage(overlayImage, 0, 0, width, height);
         URL.revokeObjectURL(url);
   
-        // Trigger download
         const a = document.createElement("a");
         a.download = `TitanCanyon-${teamName}.png`;
         a.href = canvas.toDataURL("image/png");
@@ -140,6 +138,7 @@ const teams = [
       overlayImage.src = url;
     };
   }
+  
   
   
   // Reset functionality
