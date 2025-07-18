@@ -17,6 +17,19 @@ const teams = [
     { id: "P5", x: 115, y: 245 },
     { id: "P6", x: 90, y: 182.5 }
   ];
+
+  const altMap1Positions = [
+  { id: "P1", x: 180, y: 50 },
+  { id: "P2", x: 247, y: 115 },
+  { id: "P3", x: 316, y: 185 },
+  { id: "P4", x: 270, y: 230 },
+  { id: "P5", x: 230, y: 273 },
+  { id: "P6", x: 180, y: 315 },
+  { id: "P7", x: 115, y: 250 },
+  { id: "P8", x: 45, y: 180 },
+  { id: "P9", x: 90, y: 137 },
+  { id: "P10", x: 135, y: 90 }
+];
   
   function createTeamMap(team) {
     const container = document.createElement("div");
@@ -83,25 +96,26 @@ const teams = [
     document.getElementById("maps").appendChild(container);
   }
   
-  function renderNames(teamName) {
-    const svg = d3.select(`#svg-${teamName}`);
-    svg.selectAll("text").remove();
-  
-    positions.forEach((pos, i) => {
-      const inputId = `${teamName}-P${i + 1}`;
-      const name = document.getElementById(inputId).value;
-      const label = name || `Player ${i + 1}`;
-      svg.append("text")
-        .attr("x", pos.x)
-        .attr("y", pos.y)
-        .attr("text-anchor", "middle")
-        .attr("dominant-baseline", "middle")
-        .attr("font-size", "12px")
-        .attr("fill", name ? "black" : "#999")
-        .style("font-style", name ? "normal" : "italic")
-        .text(label);
-    });
-  }
+  function renderNames(teamName, posArray = positions) {
+  const svg = d3.select(`#svg-${teamName}`);
+  svg.selectAll("text").remove();
+
+  posArray.forEach((pos, i) => {
+    const inputId = `${teamName}-P${i + 1}`;
+    const name = document.getElementById(inputId).value;
+    const label = name || `Player ${i + 1}`;
+    svg.append("text")
+      .attr("x", pos.x)
+      .attr("y", pos.y)
+      .attr("text-anchor", "middle")
+      .attr("dominant-baseline", "middle")
+      .attr("font-size", "12px")
+      .attr("fill", name ? "black" : "#999")
+      .style("font-style", name ? "normal" : "italic")
+      .text(label);
+  });
+}
+
   
   function downloadMap(teamName, imgURL) {
     const svg = document.getElementById(`svg-${teamName}`);
@@ -149,6 +163,7 @@ const teams = [
   
   // Load teams
   teams.forEach(createTeamMap);
+  createAltMap1();
   
   // Floaters
   const floatersDiv = document.getElementById("floaters-inputs");
@@ -165,4 +180,93 @@ const teams = [
     };
     floatersDiv.appendChild(input);
   }
+
+  // ALT MAP 1 
+
+  function createAltMap1() {
+  const mapId = "altMap1";
+  const team = { name: mapId, file: "alt-map1.png" };
+
+  const container = document.createElement("div");
+  container.className = "team-block";
+
+  const title = document.createElement("h2");
+  title.textContent = "Bonus Map 1";
+  container.appendChild(title);
+
+  const inputGrid = document.createElement("div");
+  inputGrid.className = "input-grid";
+
+  const stored = JSON.parse(localStorage.getItem(`inputs-${mapId}`) || "[]");
+
+  altMap1Positions.forEach((pos, i) => {
+    const input = document.createElement("input");
+    input.placeholder = `Player ${i + 1}`;
+    input.id = `${mapId}-${pos.id}`;
+    input.value = stored[i] || "";
+
+    input.oninput = () => {
+      const inputs = altMap1Positions.map(p => document.getElementById(`${mapId}-${p.id}`).value);
+      localStorage.setItem(`inputs-${mapId}`, JSON.stringify(inputs));
+      renderNames(mapId, altMap1Positions);
+    };
+
+    inputGrid.appendChild(input);
+  });
+
+  container.appendChild(inputGrid);
+  
+
+  const svg = d3.create("svg")
+    .attr("width", width)
+    .attr("height", height)
+    .attr("id", `svg-${mapId}`)
+    .attr("viewBox", `0 0 ${width} ${height}`)
+    .attr("preserveAspectRatio", "xMidYMid meet");
+
+  const imgURL = `images/${team.file}`;
+  fetch(imgURL)
+    .then(res => res.blob())
+    .then(blob => {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const base64data = reader.result;
+        svg.append("image")
+          .attr("href", base64data)
+          .attr("x", 0)
+          .attr("y", 0)
+          .attr("width", width)
+          .attr("height", height);
+        renderNames(mapId, altMap1Positions);
+      };
+      reader.readAsDataURL(blob);
+    });
+
+  container.appendChild(svg.node());
+
+  const button = document.createElement("button");
+  button.textContent = "Download Map";
+  button.onclick = () => downloadMap(mapId, imgURL);
+  container.appendChild(button);
+
+ const floatersElement = document.querySelector(".floaters");
+
+// Create wrapper with spacing and header
+  const wrapper = document.createElement("div");
+  wrapper.style.marginTop = "40px"; // spacing above alt map
+
+  const heading = document.createElement("h2");
+  heading.textContent = "Bonus Map 1";
+  heading.style.marginBottom = "10px";
+  wrapper.appendChild(heading);
+
+  wrapper.appendChild(container);
+
+  // Insert the wrapper after floaters
+  floatersElement.insertAdjacentElement("afterend", wrapper);
+
+}
+
+
+
   
