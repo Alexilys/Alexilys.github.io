@@ -256,7 +256,7 @@ const teams = [
   wrapper.style.marginTop = "40px"; // spacing above alt map
 
   const heading = document.createElement("h2");
-  heading.textContent = "Bonus Map 1";
+  heading.textContent = "Bonus Maps";
   heading.style.marginBottom = "10px";
   wrapper.appendChild(heading);
 
