@@ -462,7 +462,7 @@ renderBonusMaps();
 
 // Manual version info (update this yourself when making changes)
 const appVersion = {
-  version: "1.2.0", // ← bump this when you update
+  version: "1.2.2", // ← bump this when you update
   lastUpdated: "2025-08-27",
   changes: [
     "Added Bonus Map 2 with 8 input fields",
