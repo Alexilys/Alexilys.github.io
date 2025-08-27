@@ -420,3 +420,31 @@ function renderBonusMaps() {
 
 // Render Bonus Maps
 renderBonusMaps();
+
+
+// -------------------------------
+// Version & Console Log
+// -------------------------------
+
+// Manual version info (update this yourself when making changes)
+const appVersion = {
+  version: "1.2.0", // ← bump this when you update
+  lastUpdated: "2025-08-27",
+  changes: [
+    "Added Bonus Map 2 with 8 input fields",
+    "Improved comments throughout the code for readability",
+    "Structured alt maps insertion after Floaters"
+  ]
+};
+
+// Auto timestamp: capture current date/time when script loads
+const loadTimestamp = new Date().toLocaleString();
+
+// Print formatted log to console
+console.log("========== Titan Canyon Maps ==========");
+console.log(`Version:       ${appVersion.version}`);
+console.log(`Last Updated:  ${appVersion.lastUpdated}`);
+console.log(`Loaded At:     ${loadTimestamp}`);
+console.log("Recent Changes:");
+appVersion.changes.forEach((c, i) => console.log(` ${i + 1}. ${c}`));
+console.log("=======================================");
