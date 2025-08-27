@@ -397,29 +397,63 @@ function createAltMap2() {
 // RENDER BONUS MAPS SECTION
 // ==============================
 
-// Place Bonus Maps under Floaters section
+// This function renders all "bonus maps" (AltMap1, AltMap2, etc.) in a dedicated
+// section immediately below the Floaters input area. It creates a wrapper to hold
+// the section heading and the individual map blocks. Each map block is styled with
+// the "team-block" look and gets an additional "bonus-map" class to manage spacing.
 function renderBonusMaps() {
+  // Grab the Floaters section as the reference point for insertion
   const floatersElement = document.querySelector(".floaters");
 
-  // Wrapper for Bonus Maps section
+  // ----------------------------------
+  // WRAPPER CREATION
+  // ----------------------------------
+  // The wrapper holds the entire Bonus Maps section, including the heading and all maps.
+  // Using a dedicated CSS class allows us to manage spacing, layout, and responsive wrapping
+  // entirely via CSS instead of inline JS styles.
   const wrapper = document.createElement("div");
-  wrapper.style.marginTop = "40px"; // spacing above section
+  wrapper.className = "bonus-wrapper"; // Class defined in CSS for layout & spacing
 
+  // ----------------------------------
+  // SECTION HEADING
+  // ----------------------------------
+  // Creates a central heading for the Bonus Maps section.
+  // Ensures it spans the full width of the wrapper and is centered for aesthetics.
   const heading = document.createElement("h2");
   heading.textContent = "Bonus Maps";
-  heading.style.marginBottom = "10px";
+  heading.style.width = "100%";
+  heading.style.textAlign = "center";
   wrapper.appendChild(heading);
 
-  // Append both bonus maps
-  wrapper.appendChild(createAltMap1());
-  wrapper.appendChild(createAltMap2());
+  // ----------------------------------
+  // BONUS MAPS CREATION
+  // ----------------------------------
+  // Create each bonus map individually using pre-defined functions. Each map function:
+  // - Creates its own container
+  // - Adds a title, input fields, SVG background, and download button
+  // - Saves/retrieves input values from localStorage
+  // - Renders player names on the SVG background
+  // Each map receives the "bonus-map" class to handle spacing below it.
 
-  // Insert after floaters
+  const alt1 = createAltMap1(); // Bonus Map 1 (10 input slots)
+  const alt2 = createAltMap2(); // Bonus Map 2 (8 input slots)
+
+  wrapper.appendChild(alt1);
+  wrapper.appendChild(alt2);
+
+  // ----------------------------------
+  // INSERT WRAPPER INTO DOM
+  // ----------------------------------
+ 
   floatersElement.insertAdjacentElement("afterend", wrapper);
 }
 
-// Render Bonus Maps
+// ==============================
+// INITIALIZE BONUS MAPS RENDERING
+// ==============================
+
 renderBonusMaps();
+
 
 
 // -------------------------------

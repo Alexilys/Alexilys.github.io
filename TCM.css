@@ -96,3 +96,20 @@ body {
     font-weight: bold;
   }
   
+  /* Wrapper for all bonus maps */
+.bonus-wrapper {
+  display: flex;
+  flex-wrap: wrap;         /* Allow wrapping on smaller screens */
+  gap: 20px;               /* Space between bonus maps */
+  justify-content: center; /* Center maps */
+  margin-top: 40px;        /* Space above bonus maps */
+  padding: 10px;
+}
+
+/* Style individual bonus map blocks (reuse team-block look but with flexibility) */
+.bonus-wrapper .team-block {
+  flex: 1 1 360px;         /* Grow/shrink but prefer 360px */
+  max-width: 500px;        /* Prevent overly wide maps */
+  padding: 15px;
+  box-sizing: border-box;
+}
